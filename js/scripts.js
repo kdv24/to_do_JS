@@ -7,7 +7,7 @@ $(document).ready(function(){
     var inputtedTask = $("input#new-task").val();
     var newTask = {task: inputtedTask};
 
-    $("ul#returned-tasks").append("<li><span class='returned-task'>" + newTask.task + "</span></li>");
+    $("ul#returned-tasks").append("<li><span class='returned-task'>" + "  " + newTask.task + "</span></li>");
 
     $("input#new-task").val("");
     //what does .last() do here?
@@ -16,11 +16,20 @@ $(document).ready(function(){
       //for every "li" in returned -tasks, will remove when clicked on
       //what does .first() do here?
       //for every 'li' in returned-tasks, will remove 'this' task
-      $("#returned-tasks").children("li").click(function(){
+      $("#returned-tasks").children("li").last().click(function(){
         // $(this).remove();
-        $(this).css("font-weight", "bold");
-        $(this).css("text-decoration", "line-through");
-      //});
+        // $(this).prepend("<i class='fa fa-check-square'></i>");
+
+        $(this).dblclick(function() {
+          $(this).remove();
+        // $(this).css("font-weight", "bold");
+        // $(this).css("text-decoration", "line-through");
+      // });
+      });
+      $("#returned-tasks").children("li").last().click(function(){
+        $(this).prepend("<i class='fa fa-check-square'></i>");
+      });
+
     });
   });
 });
