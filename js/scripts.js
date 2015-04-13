@@ -10,10 +10,12 @@ $(document).ready(function(){
     $("ul#returned-tasks").append("<li><span class='returned-task'>" + newTask.task + "</span></li>");
 
     $("input#new-task").val("");
-
-    // $(".returned-task").last().click(function() {
+    //left out .click();, otherwise it would click on the list and change them
+    $(".returned-task").last().click(function() {
       $(".returned-task").text(newTask.task);
-    // });
-
+      $("ul#returned-tasks").children("li").first().click(function(){
+        $(this).remove();
+      });
+    });
   });
 });

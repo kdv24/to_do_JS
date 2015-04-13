@@ -1,0 +1,8 @@
+.returned-task {
+  cursor: pointer;
+  color: #0088cc;
+}
+
+.returned-task: hover {
+  text-decoration: underline;
+}
