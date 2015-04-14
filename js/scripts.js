@@ -17,18 +17,20 @@ $(document).ready(function(){
       //what does .first() do here?
       //for every 'li' in returned-tasks, will remove 'this' task
       $("#returned-tasks").children("li").last().click(function(){
-        // $(this).remove();
+
+        $("ul#completed-tasks").append("<li><span class='completed-task'>" + " " + newTask.task + "</span></li>");
+        $(this).remove();
         // $(this).prepend("<i class='fa fa-check-square'></i>");
 
-        $(this).dblclick(function() {
-          $(this).remove();
+        // $(this).dblclick(function() {
+        //   $(this).remove();
         // $(this).css("font-weight", "bold");
         // $(this).css("text-decoration", "line-through");
       // });
-      });
-      $("#returned-tasks").children("li").last().click(function(){
-        $(this).prepend("<i class='fa fa-check-square'></i>");
-      });
+      // });
+      // $("#returned-tasks").children("li").last().click(function(){
+      //   $(this).prepend("<i class='fa fa-check-square'></i>");
+      // });
 
     });
   });
